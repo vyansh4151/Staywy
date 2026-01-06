@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Millionaire YT UC Store - Premium BGMI UC</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg1:#05050a;
+      --bg2:#0f001a;
+      --bg3:#1a0028;
+      --stroke: rgba(255,255,255,.15);
+      --stroke-bright: rgba(255,215,0,.35);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,.75);
+      --muted2: rgba(255,255,255,.60);
+      --gold:#ffd700;
+      --gold-bright:#ffed4e;
+      --orange:#ff6b35;
+      --mint:#00ff88;
+      --cyan:#00d9ff;
+      --purple:#b844ff;
+      --shadow-sm: 0 8px 24px rgba(0,0,0,.35);
+      --shadow-md: 0 16px 48px rgba(0,0,0,.45);
+      --shadow-lg: 0 24px 64px rgba(0,0,0,.55);
+      --shadow-glow: 0 0 40px rgba(255,215,0,.15);
+      --radius: 22px;
+      --radius-sm: 16px;
+      /* CHANGE 2: Fixed background variable */
+      --step-bg: url('bg1.jpg');
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    
+    body{
+      font-family:'Poppins',sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 700px at 15% -5%, rgba(255,215,0,.22), transparent 50%),
+        radial-gradient(1000px 700px at 88% 10%, rgba(255,107,53,.20), transparent 50%),
+        radial-gradient(900px 600px at 50% 105%, rgba(0,255,136,.14), transparent 50%),
+        radial-gradient(800px 500px at 75% 50%, rgba(184,68,255,.12), transparent 55%),
+        linear-gradient(145deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%);
+      background-attachment: fixed;
+      overflow-x:hidden;
+      min-height: 100vh;
+    }
+
+    /* Animated gradient particles */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255,215,0,.08) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(0,217,255,.06) 0%, transparent 30%);
+      animation: particleFloat 15s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes particleFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.1); }
+      100% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    .container{
+      max-width:440px;
+      margin:0 auto;
+      padding:20px 16px;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .top-card{
+      border:1.5px solid var(--stroke);
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.04) 100%),
+        linear-gradient(225deg, rgba(255,215,0,.06) 0%, transparent 50%);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border-radius: var(--radius);
+      padding:22px 18px;
+      box-shadow: 
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255,255,255,.15),
+        var(--shadow-glow);
+      position:relative;
+      overflow:hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .top-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        var(--shadow-lg),
+        0 32px 80px rgba(0,0,0,.65),
+        var(--shadow-glow),
+        inset 0 1px 0 rgba(255,255,255,.20);
+    }
+
+    .header{ 
+      text-align:center; 
+      position:relative; 
+      z-index:1;
+    }
+
+    .logo{
+      font-family:'Orbitron',monospace;
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:1px;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 25%, var(--orange) 75%, #ff4d1a 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-shadow: 0 0 40px rgba(255,215,0,.25);
+      filter: drop-shadow(0 4px 12px rgba(255,215,0,.3));
+      animation: logoGlow 4s ease-in-out infinite alternate;
+      position: relative;
+      display: inline-block;
+    }
+
+    @keyframes logoGlow {
+      0% { filter: drop-shadow(0 4px 12px rgba(255,215,0,.3)); }
+      100% { filter: drop-shadow(0 6px 20px rgba(255,215,0,.5)); }
+    }
+
+    .tagline{ 
+      margin-top:8px; 
+      color:var(--muted); 
+      font-size:13.5px; 
+      font-weight:500;
+      letter-spacing: 0.3px;
+    }
+
+    .yt-link{
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,.18);
+      background: 
+        linear-gradient(135deg, rgba(255,0,0,.15) 0%, rgba(0,0,0,.35) 100%);
+      backdrop-filter: blur(12px);
+      color: rgba(255,255,255,.92);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+      box-shadow: 
+        0 12px 32px rgba(255,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.12);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .yt-link:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 18px 48px rgba(255,0,0,.4);
+      border-color: rgba(255,255,255,.35);
+    }
+
+    .yt-link i{ color: #ff0000; font-size: 18px; }
+
+    .brand-logos{
+      margin-top:14px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items: center;
+      position:relative;
+      z-index:1;
+    }
+
+    /* CHANGE 1: Bigger logos */
+    .brand-logo{
+      height:45px; /* Increased from 24px */
+      width:auto;
+      opacity:.95;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.5));
+      transition: all 0.3s ease;
+    }
+
+    .trust-strip{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .trust-pill{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background: 
+        linear-gradient(135deg, rgba(0,255,136,.08) 0%, rgba(0,0,0,.30) 100%);
+      backdrop-filter: blur(10px);
+      color:var(--muted);
+      font-size:12px;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    }
+
+    .progress-wrap{
+      border:1.5px solid var(--stroke);
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.02) 100%);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding:16px 16px;
+      box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,.10);
+    }
+
+    .progress-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:relative;
+      gap:8px;
+    }
+
+    .progress-step{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.05) 100%);
+      border:2px solid var(--stroke);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      font-weight:800;
+      transition: all .35s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index:2;
+      position: relative;
+    }
+
+    .progress-step.active{
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--orange) 100%);
+      color:#1a0a00;
+      border-color: transparent;
+      box-shadow: 
+        0 0 0 4px rgba(255,215,0,.08),
+        0 8px 28px rgba(255,215,0,.35),
+        inset 0 1px 2px rgba(255,255,255,.5);
+      transform: scale(1.08);
+    }
+
+    .progress-step.completed{
+      background: linear-gradient(135deg, var(--mint) 0%, #00d98f 100%);
+      color:#001a10;
+      border-color: transparent;
+    }
+
+    .progress-line{
+      height:3px;
+      flex:1;
+      background: rgba(255,255,255,.15);
+      border-radius:99px;
+      z-index:1;
+      transition: all .35s ease;
+    }
+
+    .progress-line.active{
+      background: linear-gradient(90deg, var(--gold) 0%, var(--orange) 100%);
+      box-shadow: 0 0 16px rgba(255,215,0,.4);
+    }
+
+    .step{ display:none; animation: slideInUp .4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .step.active{ display:block; }
+
+    @keyframes slideInUp{
+      from{ opacity:0; transform: translateY(20px) scale(0.98); }
+      to{ opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    .step-content{
+      border:1.5px solid var(--stroke);
+      background: 
+        linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.03) 100%);
+      backdrop-filter: blur(20px) saturate(1.3);
+      border-radius: var(--radius);
+      padding:20px 18px;
+      box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.12);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Fixed background usage */
+    .step-content::before{
+      content:"";
+      position:absolute; 
+      inset:0;
+      background: var(--step-bg) center/cover no-repeat;
+      opacity:.25;
+      filter: saturate(1.2) contrast(1.1) brightness(0.9);
+      transform: scale(1.05);
+      z-index:0;
+    }
+
+    .step-content > *{ position:relative; z-index:1; }
+
+    .step-title{
+      font-family:'Orbitron',monospace;
+      font-size:22px;
+      font-weight:900;
+      text-align:center;
+      margin-bottom:16px;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--orange) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .subnote{
+      text-align:center;
+      color:var(--muted2);
+      font-size:12.5px;
+      margin-top:-8px;
+      margin-bottom:18px;
+      font-weight: 500;
+    }
+
+    .packs-grid{ 
+      display:grid; 
+      grid-template-columns:1fr 1fr; 
+      gap:14px; 
+      margin-bottom:16px; 
+    }
+
+    .pack-card{
+      background: linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.04) 100%);
+      border:1.5px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:18px 14px;
+      text-align:center;
+      cursor:pointer;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      position:relative;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .pack-card:hover{
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(255,215,0,.5);
+    }
+
+    .pack-card.selected{
+      border-color: rgba(255,215,0,.85);
+      background: linear-gradient(135deg, rgba(255,215,0,.15) 0%, rgba(255,107,53,.12) 100%);
+      box-shadow: 0 12px 40px rgba(255,215,0,.25);
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .pack-card.selected::after {
+      content: "✓";
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 22px;
+      height: 22px;
+      background: linear-gradient(135deg, var(--mint) 0%, #00d98f 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+      color: #001a10;
+    }
+
+    .pack-uc{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size:17px;
+      font-weight:800;
+      color: rgba(255,255,255,.95);
+      margin-bottom:8px;
+    }
+
+    .uc-icon{
+      width:34px;
+      height:34px;
+      object-fit:contain;
+      filter: drop-shadow(0 8px 18px rgba(255,215,0,.3));
+    }
+
+    .pack-price{
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size:17px;
+      font-weight:900;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .form-group{ margin-bottom:16px; }
+
+    .form-label{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-weight:700;
+      margin-bottom:10px;
+      color: rgba(255,255,255,.90);
+      font-size:13.5px;
+    }
+
+    .form-input{
+      width:100%;
+      padding:15px 16px;
+      background: rgba(0,0,0,.28);
+      border:1.5px solid rgba(255,255,255,.16);
+      border-radius:16px;
+      color:#fff;
+      font-size:15px;
+      font-weight: 500;
+      outline:none;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus{
+      border-color: rgba(255,215,0,.75);
+      background: rgba(0,0,0,.35);
+    }
+
+    /* CHANGE 4: Payment Grid Styles */
+    .pay-grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .pay-app-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      height: 70px;
+    }
+
+    .pay-app-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .pay-app-btn img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    .hint{ 
+      color: var(--muted2); 
+      font-size:12px; 
+      margin-top:10px; 
+      line-height:1.4;
+      font-weight: 500;
+    }
+
+    .file-upload-area{
+      border:2px dashed rgba(255,215,0,.7);
+      border-radius:18px;
+      padding:24px 16px;
+      text-align:center;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor:pointer;
+      background: linear-gradient(135deg, rgba(255,215,0,.10) 0%, rgba(255,215,0,.05) 100%);
+      margin:16px 0 12px;
+    }
+
+    .file-upload-area:hover{
+      border-color: rgba(255,215,0,1);
+      background: linear-gradient(135deg, rgba(255,215,0,.15) 0%, rgba(255,215,0,.08) 100%);
+    }
+
+    #screenshotPreview{
+      max-width:100%;
+      max-height:220px;
+      border-radius:16px;
+      margin-top:14px;
+      display:none;
+      border:2px solid rgba(255,255,255,.15);
+    }
+
+    .btn-row{ display:flex; gap:12px; }
+
+    .btn{
+      padding:15px 16px;
+      border:none;
+      border-radius:16px;
+      font-size:15px;
+      font-weight:900;
+      cursor:pointer;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      width:100%;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--orange) 100%);
+      color:#1a0800;
+      box-shadow: 0 12px 32px rgba(255,215,0,.3);
+    }
+
+    .btn-primary:hover{ transform: translateY(-3px) scale(1.01); }
+
+    .btn-secondary{
+      background: linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.04) 100%);
+      color:#fff;
+      border:1.5px solid rgba(255,255,255,.16);
+    }
+
+    .btn-secondary:hover{ 
+      background: linear-gradient(135deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.08) 100%);
+      transform: translateY(-2px);
+    }
+
+    .btn:disabled{ 
+      opacity:.45; 
+      cursor:not-allowed; 
+      transform:none !important; 
+    }
+
+    .success-screen{ text-align:center; padding:32px 12px 12px; }
+
+    .success-icon{
+      font-size:76px;
+      color: var(--mint);
+      margin-bottom:14px;
+      animation: successPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes successPop {
+      0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+      50% { transform: scale(1.2) rotate(10deg); }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    .success-title{ 
+      font-size:24px; 
+      font-weight:900; 
+      margin-bottom:10px; 
+      background: linear-gradient(135deg, var(--mint) 0%, #00d98f 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* Store Closed Overlay */
+    .store-closed-overlay{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,.85);
+      backdrop-filter: blur(16px);
+    }
+
+    .store-closed-card{
+      width: min(440px, 100%);
+      border: 1.5px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.05) 100%);
+      backdrop-filter: blur(24px);
+      border-radius: 20px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .store-closed-title{
+      font-family: 'Orbitron', monospace;
+      font-size: 22px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ff4d4d 0%, var(--orange) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width:480px){
+      .container{ padding:16px 14px; }
+      .logo{ font-size:26px; }
+      .pay-grid-container { height: auto; }
+      .pay-app-btn { height: 60px; }
+    }
+
+    .btn.loading {
+      pointer-events: none;
+      color: transparent;
+    }
+    .btn.loading::after {
+      content: "";
+      position: absolute;
+      width: 18px; height: 18px;
+      top: 50%; left: 50%;
+      margin: -9px 0 0 -9px;
+      border: 3px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: buttonSpin 0.8s linear infinite;
+    }
+    @keyframes buttonSpin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+
+<body>
+
+  <div class="store-closed-overlay" id="storeClosedOverlay">
+    <div class="store-closed-card">
+      <div class="store-closed-title">🔒 Store Closed</div>
+      <div class="store-closed-text" style="color:#ddd; font-size:14px;">
+        Closing time: 1:00 AM to 9:00 AM<br>
+        We'll start taking orders after 9:00 AM.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="top-card">
+      <div class="header">
+        <h1 class="logo">Millionaire YT UC Store</h1>
+        <p class="tagline">Premium BGMI UC • Lightning-fast delivery</p>
+
+        <a class="yt-link" href="https://youtube.com/@millionaireyt6504" target="_blank" rel="noopener">
+          <i class="fa-brands fa-youtube"></i>
+          Visit our YouTube
+        </a>
+
+        <div class="brand-logos">
+          <img src="krafton.png" alt="KRAFTON" class="brand-logo">
+          <img src="bgmi.png" alt="BGMI" class="brand-logo">
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-pill"><i class="fa-solid fa-shield-halved"></i><span>Secure</span></div>
+          <div class="trust-pill"><i class="fa-solid fa-bolt"></i><span>Fast</span></div>
+          <div class="trust-pill"><i class="fa-solid fa-star"></i><span>Trusted</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-container">
+        <div class="progress-step active" data-step="1">1</div>
+        <div class="progress-line" id="line1"></div>
+        <div class="progress-step" data-step="2">2</div>
+        <div class="progress-line" id="line2"></div>
+        <div class="progress-step" data-step="3">3</div>
+        <div class="progress-line" id="line3"></div>
+        <div class="progress-step" data-step="4">4</div>
+      </div>
+    </div>
+
+    <div id="step1" class="step active">
+      <div class="step-content">
+        <h2 class="step-title">Select UC Pack</h2>
+        <p class="subnote">Choose your desired pack to continue</p>
+
+        <div class="packs-grid" id="packsGrid">
+          <div class="pack-card" data-uc="60" data-price="40">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>60 UC</span></div>
+            <div class="pack-price">₹40</div>
+          </div>
+
+          <div class="pack-card" data-uc="325" data-price="210">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>325 UC</span></div>
+            <div class="pack-price">₹210</div>
+          </div>
+
+          <div class="pack-card" data-uc="660" data-price="375">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>660 UC</span></div>
+            <div class="pack-price">₹375</div>
+          </div>
+
+          <div class="pack-card" data-uc="1800" data-price="950">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>1800 UC</span></div>
+            <div class="pack-price">₹950</div>
+          </div>
+
+          <div class="pack-card" data-uc="3850" data-price="1710">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>3850 UC</span></div>
+            <div class="pack-price">₹1710</div>
+          </div>
+
+          <div class="pack-card" data-uc="8100" data-price="3375">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>8100 UC</span></div>
+            <div class="pack-price">₹3375</div>
+          </div>
+
+          <div class="pack-card" data-uc="16200" data-price="5260">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>16200 UC</span></div>
+            <div class="pack-price">₹5260</div>
+          </div>
+
+          <div class="pack-card" data-uc="32400" data-price="9130">
+            <div class="pack-uc"><img src="uc-logo.png" alt="UC" class="uc-icon"><span>32400 UC</span></div>
+            <div class="pack-price">₹9130</div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="next1" disabled>Continue to Details</button>
+      </div>
+    </div>
+
+    <div id="step2" class="step">
+      <div class="step-content">
+        <h2 class="step-title">Enter Details</h2>
+        <p class="subnote">Provide accurate information for smooth delivery</p>
+
+        <div class="form-group">
+          <label class="form-label">Selected Pack <span id="selectedPackDisplay" style="color:var(--gold); font-weight:900;">-</span></label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">BGMI UID (10 digits)</label>
+          <input type="tel" class="form-input" id="uid" placeholder="1234567890" maxlength="10" inputmode="numeric">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">In-Game Name (IGN)</label>
+          <input type="text" class="form-input" id="ign" placeholder="Your IGN">
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-secondary" id="back2">Back</button>
+          <button type="button" class="btn btn-primary" id="next2" disabled>Continue to Payment</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="step3" class="step">
+      <div class="step-content">
+        <h2 class="step-title">Payment</h2>
+        <p class="subnote">Select your app and pay safely</p>
+
+        <div class="pay-box payment-section" style="text-align:center; margin-bottom:16px;">
+          <div style="color:rgba(255,255,255,.85); font-weight:900; font-size:16px; margin-bottom:12px;">
+            Amount to Pay: <span id="paymentAmount" style="color:var(--gold-bright); font-size:22px;">₹0</span>
+          </div>
+
+          <div class="pay-grid-container">
+            <a id="link-phonepe" href="#" class="pay-app-btn"><img src="phonepe.png" alt="PhonePe"></a>
+            <a id="link-gpay" href="#" class="pay-app-btn"><img src="gpay.png" alt="GPay"></a>
+            <a id="link-paytm" href="#" class="pay-app-btn"><img src="paytm.png" alt="Paytm"></a>
+            <a id="link-bhim" href="#" class="pay-app-btn"><img src="bhim.png" alt="BHIM"></a>
+            <a id="link-amazon" href="#" class="pay-app-btn"><img src="amazonpay.png" alt="Amazon"></a>
+            <a id="link-mobikwik" href="#" class="pay-app-btn"><img src="mobikwik.png" alt="Mobikwik"></a>
+          </div>
+
+          <div style="text-align:left; background:rgba(0,0,0,0.3); padding:12px; border-radius:12px; font-size:13px; color:#ddd; line-height:1.6;">
+            <strong>Instructions:</strong><br>
+            1. Tap any app logo above to pay.<br>
+            2. Pay the exact amount shown.<br>
+            3. Take a screenshot and upload below.
+          </div>
+        </div>
+
+        <form id="orderForm"
+              name="uc-order"
+              method="POST"
+              enctype="multipart/form-data"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field">
+
+          <input type="hidden" name="form-name" value="uc-order">
+          <p style="display:none;"><label><input name="bot-field"></label></p>
+
+          <input type="hidden" name="pack_uc" id="pack_uc">
+          <input type="hidden" name="pack_price" id="pack_price">
+          <input type="hidden" name="bgmi_uid" id="bgmi_uid">
+          <input type="hidden" name="ign" id="ign_field">
+          <input type="hidden" name="time" id="time_field">
+          <input type="hidden" name="order_id" id="order_id_field">
+
+          <div class="file-upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt" style="font-size:48px; color:var(--gold); margin-bottom:12px;"></i>
+            <p style="font-weight:900; font-size:15px;">📸 Upload Payment Screenshot</p>
+            <input type="file" id="screenshot" name="payment_screenshot" accept="image/*" style="display:none;">
+            <img id="screenshotPreview" alt="Preview">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn-secondary" id="back3">Back</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn" disabled>🚀 Place Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="step4" class="step">
+      <div class="step-content success-screen">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h2 class="success-title">Order Received ✓</h2>
+        <p class="success-text">Thank you! Your order has been placed successfully.</p>
+
+        <div style="margin-top:12px;">
+          <div style="font-weight:900;color:rgba(255,255,255,.95); font-size:15px;">
+            Order ID: <span id="orderIdText" style="color:var(--gold-bright); font-family: monospace;">-</span>
+          </div>
+        </div>
+
+        <div class="order-summary" id="orderSummary"
+             style="margin-top:14px;text-align:left;border:1.5px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 14px;font-size:13.5px;background:rgba(0,0,0,.30); line-height:1.6;">
+        </div>
+
+        <div style="margin-top:16px;">
+          <button type="button" class="btn btn-primary" onclick="location.reload()">🔄 Place New Order</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentStep = 1;
+    let selectedPack = null;
+    let screenshotFile = null;
+    let orderId = null;
+
+    // Hardcoded UPI VPA (Internal use only for link generation)
+    const UPI_VPA = "millionaireytuc@ptaxis"; 
+
+    function buildUpiDeepLink({ vpa, name, amount, note }) {
+      // Standard UPI scheme used by all apps
+      return `upi://pay?pa=${encodeURIComponent(vpa)}&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&cu=INR&tn=${encodeURIComponent(note)}`;
+    }
+
+    function generateOrderId(){
+      return `MYT-${Date.now().toString().slice(-6)}-${Math.floor(100 + Math.random()*900)}`;
+    }
+
+    updateProgress();
+
+    // STEP 1: Pack selection
+    document.querySelectorAll('.pack-card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.pack-card').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+        selectedPack = { uc: this.dataset.uc, price: this.dataset.price };
+        document.getElementById('next1').disabled = false;
+      });
+    });
+
+    document.getElementById('next1').onclick = function() {
+      if (!selectedPack) return;
+      document.getElementById('selectedPackDisplay').textContent = `${selectedPack.uc} UC • ₹${selectedPack.price}`;
+      showStep(2);
+    };
+
+    // STEP 2 validation
+    document.getElementById('uid').oninput = validateStep2;
+    document.getElementById('ign').oninput = validateStep2;
+
+    function validateStep2() {
+      const uid = document.getElementById('uid').value;
+      const ign = document.getElementById('ign').value;
+      document.getElementById('next2').disabled = !(uid.length === 10 && ign.trim());
+    }
+
+    document.getElementById('next2').onclick = function() {
+      const uid = document.getElementById('uid').value.trim();
+      
+      // CHANGE 6: Check for previous purchase of this specific pack for this UID
+      const purchaseKey = `purchased_${uid}_${selectedPack.uc}`;
+      if (localStorage.getItem(purchaseKey)) {
+        alert("You have already purchased this pack for this UID. Please choose a different pack.");
+        showStep(1);
+        return;
+      }
+
+      document.getElementById('paymentAmount').textContent = `₹${selectedPack.price}`;
+
+      orderId = generateOrderId();
+      const ignVal = document.getElementById('ign').value.trim();
+      const note = `Order ${orderId}`;
+      const deepLink = buildUpiDeepLink({ vpa: UPI_VPA, name: 'Millionaire YT', amount: selectedPack.price, note: note });
+
+      // Assign Deep Link to all app buttons
+      const appLinks = ['link-phonepe', 'link-gpay', 'link-paytm', 'link-bhim', 'link-amazon', 'link-mobikwik'];
+      appLinks.forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.href = deepLink;
+      });
+
+      showStep(3);
+    };
+
+    // Back buttons
+    document.getElementById('back2').onclick = () => showStep(1);
+    document.getElementById('back3').onclick = () => showStep(2);
+
+    // File upload logic
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('screenshot');
+    const preview = document.getElementById('screenshotPreview');
+    const submitBtn = document.getElementById('submitBtn');
+
+    uploadArea.onclick = () => fileInput.click();
+    fileInput.onchange = handleFile;
+
+    ['dragenter','dragover','dragleave','drop'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e){ e.preventDefault(); e.stopPropagation(); }
+    ['dragenter','dragover'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, () => uploadArea.classList.add('dragover'), false);
+    });
+    ['dragleave','drop'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('dragover'), false);
+    });
+    uploadArea.ondrop = (e) => {
+      fileInput.files = e.dataTransfer.files;
+      handleFile({ target: fileInput });
+    };
+
+    function handleFile(e) {
+      const file = e.target.files[0];
+      if (file && file.type.startsWith('image/') && file.size < 5 * 1024 * 1024) {
+        screenshotFile = file;
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          preview.src = evt.target.result;
+          preview.style.display = 'block';
+          submitBtn.disabled = false;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        screenshotFile = null;
+        preview.style.display = "none";
+        submitBtn.disabled = true;
+        alert("Only image files under 5MB are allowed.");
+      }
+    }
+
+    function fillOrderSummary() {
+      const orderIdEl = document.getElementById('orderIdText');
+      if (orderIdEl) orderIdEl.textContent = orderId || 'MYT-NA';
+
+      const box = document.getElementById('orderSummary');
+      if (!box) return;
+
+      const timeVal = document.getElementById('time_field').value;
+      const uidVal = document.getElementById('uid').value.trim();
+      const ignVal = document.getElementById('ign').value.trim();
+
+      box.innerHTML = `
+        <div style="font-weight:900;margin-bottom:10px; color:rgba(255,255,255,.95);">📦 Order Summary</div>
+        <div><strong>Pack:</strong> ${selectedPack.uc} UC • ₹${selectedPack.price}</div>
+        <div><strong>BGMI UID:</strong> ${uidVal}</div>
+        <div><strong>IGN:</strong> ${ignVal}</div>
+        <div><strong>Time:</strong> ${timeVal}</div>
+      `;
+    }
+
+    // Submit Order
+    const orderForm = document.getElementById('orderForm');
+    orderForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!selectedPack || !screenshotFile) return;
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+      submitBtn.textContent = 'Sending...';
+
+      document.getElementById('pack_uc').value = selectedPack.uc;
+      document.getElementById('pack_price').value = selectedPack.price;
+      document.getElementById('bgmi_uid').value = document.getElementById('uid').value.trim();
+      document.getElementById('ign_field').value = document.getElementById('ign').value.trim();
+      document.getElementById('time_field').value = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+      document.getElementById('order_id_field').value = orderId;
+
+      const formData = new FormData(orderForm);
+
+      try {
+        const res = await fetch('/', { method: 'POST', body: formData });
+        if (res.ok) {
+          // Record Purchase in LocalStorage to prevent re-buy
+          const uidVal = document.getElementById('uid').value.trim();
+          const purchaseKey = `purchased_${uidVal}_${selectedPack.uc}`;
+          localStorage.setItem(purchaseKey, 'true');
+
+          fillOrderSummary();
+          showStep(4);
+        } else {
+          alert("Submit failed. Please try again.");
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          submitBtn.textContent = '🚀 Place Order';
+        }
+      } catch (err) {
+        alert("Network error. Please try again.");
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = '🚀 Place Order';
+      }
+    });
+
+    function showStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById(`step${step}`).classList.add('active');
+      currentStep = step;
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateProgress() {
+      const steps = document.querySelectorAll('.progress-step');
+      const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
+      steps.forEach((stepEl, idx) => {
+        stepEl.classList.toggle('completed', idx < currentStep - 1);
+        stepEl.classList.toggle('active', idx === currentStep - 1);
+      });
+      lines.forEach((lineEl, idx) => {
+        lineEl.classList.toggle('active', idx < currentStep - 1);
+      });
+    }
+
+    // Store Closed Logic
+    function applyStoreTiming(){
+      const indiaStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+      const hour = new Date(indiaStr).getHours();
+      const isClosed = (hour >= 1 && hour < 9);
+
+      const overlay = document.getElementById('storeClosedOverlay');
+      overlay.style.display = isClosed ? 'flex' : 'none';
+
+      document.querySelectorAll('button, input, select, textarea, a.pay-app-btn').forEach(el => {
+        if (overlay.contains(el)) return;
+        el.style.pointerEvents = isClosed ? 'none' : 'auto';
+        if(isClosed) el.setAttribute('disabled', 'true');
+        else el.removeAttribute('disabled');
+      });
+    }
+
+    applyStoreTiming();
+    setInterval(applyStoreTiming, 30000);
+  </script>
+</body>
+</html>
